@@ -7,10 +7,11 @@
 
 ## 🔧 Tech Stack
 
-- **Backend:** ASP.NET Core (.NET 8)
-- **Architecture:** Clean Architecture
-- **Data Access:** Entity Framework Core
-- **Database:** PostgreSQL
+- **Backend:** ASP.NET Core (.NET 8).
+- **Architecture:** Clean Architecture.
+- **Data Access:** Entity Framework Core.
+- **Database:** PostgreSQL.
+- **Containers**: Docker with Docker compose plugin.
 
 > ⚠️ **Under Construction**
 >
