@@ -10,7 +10,7 @@ public static class DatabaseInitializer
     {
         app.Services.AddDbContext<FindMyPetContext>(options =>
         {
-            options.UseNpgsql(app.Configuration.GetConnectionString("DefaultConnection"));
+            options.UseNpgsql(app.Configuration.GetConnectionString("DefaultConnection"), ngpsql => ngpsql.UseNetTopologySuite());
         });
         
         app.Services.AddScoped<IUserRepository, EfUserRepository>();

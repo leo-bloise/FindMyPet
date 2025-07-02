@@ -29,4 +29,9 @@ public class EfUserRepository : IUserRepository
     {
         return _context.Users.FirstOrDefault(u => u.Telephone == telephone);
     }
+
+    public User? FindById(long id)
+    {
+        return _context.Users.FirstOrDefault(u => u.Id == id);
+    }
 }

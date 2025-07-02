@@ -10,7 +10,7 @@ public class UserConfiguration : BaseConfiguration<User>
     {
     }
 
-    public void Configure(EntityTypeBuilder<User> builder)
+    public override void Configure(EntityTypeBuilder<User> builder)
     {
         base.Configure(builder);
         

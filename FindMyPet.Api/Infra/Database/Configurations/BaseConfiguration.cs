@@ -18,7 +18,7 @@ public abstract class BaseConfiguration<TEntity> : IEntityTypeConfiguration<TEnt
 
     protected abstract void ConfigureUpdatedAt(EntityTypeBuilder<TEntity> builder);
     
-    public void Configure(EntityTypeBuilder<TEntity> builder)
+    public virtual void Configure(EntityTypeBuilder<TEntity> builder)
     {
         builder.ToTable(_columnName);
         

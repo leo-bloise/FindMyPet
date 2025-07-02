@@ -17,6 +17,7 @@ public class FindMyPetContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
         
+        modelBuilder.Entity<HomeEf>().Ignore("UserData");
         modelBuilder.ApplyConfiguration(new UserConfiguration());
         modelBuilder.ApplyConfiguration(new HomeEfConfiguration());
     }

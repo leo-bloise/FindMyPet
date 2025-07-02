@@ -10,7 +10,8 @@ public static class MediatorInitializer
     public static void InitializeMediatR(this WebApplicationBuilder builder)
     {
         builder.Services.AddScoped<IRequestHandler<CreateUserCommand, User>, CreateUserHandler>();
-        builder.Services.AddScoped <IRequestHandler<LoginUserCommand, string>, LoginUserHandler>();
+        builder.Services.AddScoped<IRequestHandler<LoginUserCommand, string>, LoginUserHandler>();
+        builder.Services.AddScoped<IRequestHandler<CreateHomeCommand, Home>, CreateHomeHandler>();
         
         builder.Services.AddMediatR(cfg =>
         {

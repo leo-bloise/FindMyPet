@@ -32,7 +32,7 @@ public class HomeEfConfiguration : BaseConfiguration<HomeEf>
             .ValueGeneratedOnAdd();
     }
 
-    public void Configure(EntityTypeBuilder<HomeEf> builder)
+    public override void Configure(EntityTypeBuilder<HomeEf> builder)
     {
         base.Configure(builder);
         
@@ -43,6 +43,7 @@ public class HomeEfConfiguration : BaseConfiguration<HomeEf>
     private void ConfigureLocation(EntityTypeBuilder<HomeEf> builder)
     {
         builder.Property(h => h.Location)
+            .HasColumnName("location")
             .HasColumnType("geometry (Point, 4326)")
             .IsRequired();
     }

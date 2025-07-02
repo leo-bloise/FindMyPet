@@ -26,4 +26,9 @@ public class EfHomeRepository : IHomeRepository
         
         return _homeAdapter.ToEntity(model);
     }
+
+    public bool ExistsForUser(User user)
+    {
+        return _context.Homes.Any(h => h.User.Id == user.Id);
+    }
 }

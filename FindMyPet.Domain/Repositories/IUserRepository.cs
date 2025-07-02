@@ -9,4 +9,6 @@ public interface IUserRepository
     public User CreateUser(User user);
     
     public User? FindByTelephone(string telephone);
+
+    public User? FindById(long id);
 }
