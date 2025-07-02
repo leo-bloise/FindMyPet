@@ -1,6 +1,6 @@
 services:
   database:
-    image: postgres
+    image: postgis/postgis
     environment:
       POSTGRES_PASSWORD: root
       POSTGRES_USER: root
