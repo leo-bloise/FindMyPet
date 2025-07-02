@@ -14,5 +14,6 @@ public static class DatabaseInitializer
         });
         
         app.Services.AddScoped<IUserRepository, EfUserRepository>();
+        app.Services.AddScoped<IHomeRepository, EfHomeRepository>();
     }
 }

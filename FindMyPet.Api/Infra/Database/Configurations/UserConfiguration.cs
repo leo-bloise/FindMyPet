@@ -4,22 +4,22 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace FindMyPet.Api.Infra.Database.Configurations;
 
-public class UserConfiguration : IEntityTypeConfiguration<User
-    >
+public class UserConfiguration : BaseConfiguration<User>
 {
+    public UserConfiguration() : base("users")
+    {
+    }
+
     public void Configure(EntityTypeBuilder<User> builder)
     {
-        builder.ToTable("users");
+        base.Configure(builder);
         
-        ConfigureId(builder);
         ConfigureTelephone(builder);
         ConfigureName(builder);
         ConfigurePassword(builder);
-        ConfigureCreatedAt(builder);
-        ConfigureUpdatedAt(builder);
     }
 
-    private void ConfigureId(EntityTypeBuilder<User> builder)
+    protected override void ConfigureId(EntityTypeBuilder<User> builder)
     {
         builder.Property(x => x.Id)
             .ValueGeneratedOnAdd()
@@ -29,14 +29,14 @@ public class UserConfiguration : IEntityTypeConfiguration<User
             .HasName("id");
     }
     
-    private void ConfigureCreatedAt(EntityTypeBuilder<User> builder)
+    protected override void ConfigureCreatedAt(EntityTypeBuilder<User> builder)
     {
         builder.Property(x => x.CreatedAt)
             .HasColumnName("created_at")
             .ValueGeneratedOnAdd();
     }
     
-    private void ConfigureUpdatedAt(EntityTypeBuilder<User> builder)
+    protected override void ConfigureUpdatedAt(EntityTypeBuilder<User> builder)
     {
         builder.Property(x => x.UpdatedAt)
             .HasColumnName("updated_at")

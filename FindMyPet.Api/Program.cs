@@ -1,3 +1,4 @@
+using FindMyPet.Api.Infra.Adapters;
 using FindMyPet.Api.Infra.Authentication;
 using FindMyPet.Api.Infra.Controllers;
 using FindMyPet.Api.Infra.Database;
@@ -20,6 +21,7 @@ public class Program
         builder.InitializeAuthentication();
         builder.InitializeAndSetupController();
         builder.InitializeExceptionHandling();
+        builder.InitializeAdapters();
         
         WebApplication app = builder.Build();
 

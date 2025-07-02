@@ -1,5 +1,7 @@
 CREATE TABLE IF NOT EXISTS homes (
     id SERIAL PRIMARY KEY,
     user_id INTEGER NOT NULL REFERENCES users(id),
-    location GEOMETRY(Point, 4326)
+    location GEOMETRY(Point, 4326),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
